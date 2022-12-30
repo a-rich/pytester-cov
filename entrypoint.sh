@@ -33,7 +33,7 @@ for dir in $pytest_dirs; do
   pytest_cov_dirs+="--cov=${dir} "
 done
 
-output=$(python3 -m pytest $pytest_cov_dirs --cov-config=.coveragerc $2)
+output=$(python3 -m pytest $pytest_cov_dirs --cov-config=.coveragerc $2 --cov-report term-missing)
 
 # remove pytest-coverage config file
 if [ -f $cov_config_fname ]; then
